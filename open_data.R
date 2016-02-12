@@ -50,9 +50,13 @@ colnames(eva_data) <- c("sampleID", "geneID", "reference", "ct", "status", "effi
 #' @param df$status=="Fail": selects rows with Fail status
 #' @param <- NA: attributes NA to ct values with Fail status
 #' @example
+#' This somehow changes the type of the ct column from "double" (numeric) to "character"
+#' We need to get it back to "double"
+#' @param df$ct <- as.numeric(df$ct): forces column to be numeric type
 #' The status column can be removed after this step
 #' @example
 
 df[is.na(df)==FALSE & df=="Fail",4] <- NA
+df$ct <- as.numeric(df$ct)
 
 df$status <- NULL
