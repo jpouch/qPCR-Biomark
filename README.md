@@ -5,7 +5,7 @@ R scripts to process and analyze qPCR data from Fluidigm Biomark HD
 
 **Creation : 2016/01/06**
 
-**Last update : 2016/01/18**
+**Last update : 2016/02/12**
 
 ---
 
