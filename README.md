@@ -19,7 +19,7 @@ Normalization to a reference gene is available for both Livak and Pfaffl methods
 
 pre_process_data.txt contains different information concerning the csv file extracted from Fluidigm Real-Time PCR Analysis software. Procedure to add efficiency values is also described (necessary if working with the Pfaffl's normalization method).
 
-open_data.R is a simple R script with a single command line to open the csv file, remove unused rows, assign type of data per column and which value to consider as NA.
+open_data.R is a simple R script with a single command line to open the csv file, remove unused rows, assign type of data per column and which value to consider as NA. Data set may contain unvalid Ct values (Ct value different from 999 but with Fail status). Command lines to replace these values with NA are described.
 
 normalization_livak_taqman.R is an R script which performs normalization to a reference gene according to the Livak's method (2^-∆∆Ct). In this script, only a ∆Ct between reference gene and target gene is calculated. If you wish to calculate ∆∆Ct between reference group and condition group, please ask (see contact below).
 
