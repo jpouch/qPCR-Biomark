@@ -31,8 +31,8 @@ normalization_pfaffl.R is an R script which performs normalization to a referenc
 #### Analysis
 
 hierarchical_clustering.R is an R script which performs hierarchical clustering. The example described is a clustering on the samples, on the raw Ct values. It is absolutely possible to make the clustering on the genes or on normalized values.
-Most functions used are in the R stats package.
-The dist() function accepts different methods, yet we have not tested them all and have no qualification in advising which one is the best for the data set. You can learn more about this function [here](https://stat.ethz.ch/R-manual/R-devel/library/stats/html/dist.html).
+Most functions used are in the R stats package.  
+The dist() function accepts different methods, yet we have not tested them all and have no qualification in advising which one is the best for the data set. You can learn more about this function [here](https://stat.ethz.ch/R-manual/R-devel/library/stats/html/dist.html).  
 The hclust() function also works with different methods. Changing method can drastically change the output tree you will get. Again here, we have no expertise about these methods. The choice will depend on the type of samples, data sat etc. All about hclust [here](https://stat.ethz.ch/R-manual/R-devel/library/stats/html/hclust.html).
 
 
@@ -48,7 +48,7 @@ With *git clone* from the repository
 ## Usage
 
 These scripts allow quick processing and analysis of high-throughput qPCR data generated on the Biomark HD from Fluidigm.
-Largest data set are 9,216 rows, difficult to handle on Excel.
+Largest data set are 9,216 rows, difficult to handle on Excel.  
 Using R to open and process data allows the user to quickly subset data and perform different analysis (average, standard deviation etc.)
 
 We recommand using RStudio interface, because it is very user-friendly and easy to use for non expert R users.
