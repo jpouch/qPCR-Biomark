@@ -5,7 +5,7 @@ R scripts to process and analyze qPCR data from Fluidigm Biomark HD
 
 **Creation : 2016/01/06**
 
-**Last update : 2016/02/12**
+**Last update : 2016/02/15**
 
 ---
 
@@ -32,12 +32,16 @@ normalization_pfaffl.R is an R script which performs normalization to a referenc
 
 With *git clone* from the repository
  
-```	git clone https://github.com/jpouch/qPCR-Biomark```
+```	git clone https://github.com/jpouch/qPCR-Biomark ```
 
 
 ## Usage
 
-Coming soon
+These scripts allow quick processing and analysis of high-throughput qPCR data generated on the Biomark HD from Fluidigm.
+Largest data set are 9,216 rows, difficult to handle on Excel.
+Using R to open and process data allows the user to quickly subset data and perform different analysis (average, standard deviation etc.)
+We recommand using RStudio interface, because it is very user-friendly and easy to use for non expert R users.
+You can download it [here](https://www.rstudio.com/products/rstudio/download/).
 
 #### Program
 
@@ -55,8 +59,8 @@ Coming soon
 
 ## Authors and Contact
 
-Juliette Pouch - 2015
-* <pouch@biologie.ens.fr>  <juliette.pouch@gmail.com>
+Juliette Pouch - 2016
+* <pouch@biologie.ens.fr> | <juliette.pouch@gmail.com>
 * [Github](https://github.com/jpouch)
 * [Plateforme de qPCR à haut débit de l'IBENS](http://www.ibens.ens.fr/spip.php?rubrique46)
-* <qpcr@biologie.ens.fr>
+* High-throughput qPCR core facility - IBENS contact: <qpcr@biologie.ens.fr>
