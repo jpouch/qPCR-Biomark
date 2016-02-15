@@ -40,6 +40,7 @@ With *git clone* from the repository
 These scripts allow quick processing and analysis of high-throughput qPCR data generated on the Biomark HD from Fluidigm.
 Largest data set are 9,216 rows, difficult to handle on Excel.
 Using R to open and process data allows the user to quickly subset data and perform different analysis (average, standard deviation etc.)
+
 We recommand using RStudio interface, because it is very user-friendly and easy to use for non expert R users.
 You can download it [here](https://www.rstudio.com/products/rstudio/download/).
 
