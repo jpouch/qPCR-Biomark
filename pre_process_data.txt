@@ -59,7 +59,7 @@
 ## 12 first rows
 #' Header on 7 rows: Global information on the chip (date, machine, parameters...) | not used
 #' 2 empty rows
-#' Rows 10, 11, 12: columns names (there are generally 15, from A to K) | not used
+#' Rows 10, 11, 12: columns names (there are generally 15, from A to O) | not used
 
 ## Column contents
 #' Column A (1): well coordinates in the chip -> S96-A01 stands for sample 96 / assay 01
