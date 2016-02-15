@@ -21,10 +21,20 @@ pre_process_data.txt contains different information concerning the csv file extr
 
 open_data.R is a simple R script with a single command line to open the csv file, remove unused rows, assign type of data per column and which value to consider as NA. Data set may contain unvalid Ct values (Ct value different from 999 but with Fail status). Command lines to replace these values with NA are described.
 
+#### Normalization
+
 normalization_livak.R is an R script which performs normalization to a reference gene according to the Livak's method (2^-∆∆Ct - [article](http://www.gene-quantification.de/livak-2001.pdf)). In this script, only a ∆Ct between reference gene and target gene is calculated. If you wish to calculate ∆∆Ct between reference group and condition group, please ask for related R script (see contact below).
 A function to perform the normalization to multiple reference genes using the geometric mean is also described.
 
 normalization_pfaffl.R is an R script which performs normalization to a reference gene according to the Pfaffl's method ([article] (http://www.gene-quantification.de/pfaffl-nar-2001.pdf)). In this script, you will need to have added efficiency value for each gene (as described in pre_process_data.txt).
+
+#### Analysis
+
+hierarchical_clustering.R is an R script which performs hierarchical clustering. The example described is a clustering on the samples, on the raw Ct values. It is absolutely possible to make the clustering on the genes or on normalized values.
+Most functions used are in the R stats package.
+The dist() function accepts different methods, yet we have tested them all and have no qualification in advising which one is the best for the data set. You can learn more about this function [here](https://stat.ethz.ch/R-manual/R-devel/library/stats/html/dist.html).
+The hclust() function also works with different methods. Changing method can drastically change the output tree you will get. Again here, we have no expertise about these methods. The choice will depend on the type of samples, data sat etc. All about hclust [here](https://stat.ethz.ch/R-manual/R-devel/library/stats/html/hclust.html).
+
 
 ## Get qPCR-Biomark
 
