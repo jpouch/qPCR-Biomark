@@ -20,8 +20,8 @@
 #' @param eRef: isolate efficiency for the reference
 #' @param ctRef: isolate Ct values for the reference
 #' @param denom: calculates denominator (for the reference)
-#' @param e1: all other efficiencies in the data
-#' @param ct1: all other Ct values in the data
+#' @param e1: all other efficiencies in the data (numeric type forced)
+#' @param ct1: all other Ct values in the data (numeric type forced)
 #' @param num: calculates numerator (for the targets)
 #' @param res: calculates ratio corresponding to the normalized values (see Pfaffl's article)
 #'
