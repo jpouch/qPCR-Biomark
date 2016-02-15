@@ -20,20 +20,39 @@ taq_data <- read.csv("file.csv", skip = 11, sep = ",", dec = ".", header = TRUE,
 
 colnames(taq_data) <- c("sampleID", "geneID", "reference", "ct", "status")
 
+#'
 #' @example EvaGreen chemistry data set (more columns with melting curve data)
 
 eva_data <- read.csv("file.csv", skip = 11, sep = ",", dec = ".", header = TRUE, fill = TRUE, colClasses = c("NULL", "character", "NULL", "NULL", "character", "character", "numeric", "NULL", "NULL", "character", "NULL", "NULL","NULL", "NULL", "NULL"))
 
 colnames(eva_data) <- c("sampleID", "geneID", "reference", "ct", "status")
 
+
+
 #' If you have added the efficiency values in the last column (see pre_process_data.txt), you can add one item in colClasses
+#'
+#'
 #' @example TaqMan chemistry data set
 #' @example EvaGreen chemistry data set
 
 taq_data <- read.csv("file.csv", skip = 11, sep = ",", dec = ".", header = TRUE, fill = TRUE, colClasses = c("NULL", "character", "NULL", "NULL", "character", "character", "numeric", "NULL", "NULL", "character", "NULL", "NULL", "numeric"), na.strings = "999")
-
 colnames(taq_data) <- c("sampleID", "geneID", "reference", "ct", "status", "efficiency")
 
 eva_data <- read.csv("file.csv", skip = 11, sep = ",", dec = ".", header = TRUE, fill = TRUE, colClasses = c("NULL", "character", "NULL", "NULL", "character", "character", "numeric", "NULL", "NULL", "character", "NULL", "NULL","NULL", "NULL", "NULL", "numeric"))
-
 colnames(eva_data) <- c("sampleID", "geneID", "reference", "ct", "status", "efficiency")
+
+
+#' It is possible that the Fluidigm software calculates a Ct value but gives it a Fail status.
+#' We find it best to exclude these values in order to work with only the valid values.
+#'
+#' df stands for data frame. To be replaced with your data frame name (i.e taq_data)
+#' @param is.na(df$ct) == FALSE: selects all non NA values in the ct column
+#' @param df$status=="Fail": selects rows with Fail status
+#' @param <- NA: attributes NA to ct values with Fail status
+#' @example
+#' The status column can be removed after this step
+#' @example
+
+df[is.na(df)==FALSE & df=="Fail",4] <- NA
+
+df$status <- NULL
