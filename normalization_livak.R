@@ -3,10 +3,10 @@
 ### Data normalization (Livak's method) ###
 
 ######################################## Reference ########################################
-# "Analysis of relative gene expression data using real-time PCR and the 2^-∆∆Ct method"  #
-#		Kenneth J. Livak and Thomas D. Schmittgen	                         #
-#			Methods, 25, 402-408 (2001)			              	#
-#	http://www.gene-quantification.net/livak-2001.pdf	                        #
+# "Analysis of relative gene expression data using real-time PCR and the 2^-∆∆Ct method"
+#		Kenneth J. Livak and Thomas D. Schmittgen
+#	  		Methods, 25, 402-408 (2001)
+#	http://www.gene-quantification.net/livak-2001.pdf
 ###########################################################################################
 
 #' Function to normalize qPCR data to one reference gene
