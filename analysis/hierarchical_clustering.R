@@ -66,8 +66,6 @@ data.use <- scale(mat_clust, center = medians, scale = mads)
 
 #' Generate the distance matrix
 #'
-All about dist() function [here](https://stat.ethz.ch/R-manual/R-devel/library/stats/html/dist.html)
-#'
 #' @param data.use: normalized data
 #' @param method: distance method to use
 #'
@@ -77,8 +75,6 @@ data.dist <- dist(data.use, method = "euclidian")
 
 
 #' Generate cluster solution
-#'
-All about hclust() function [here](https://stat.ethz.ch/R-manual/R-devel/library/stats/html/hclust.html)
 #'
 #' @param data.dist: distance matrix
 #' @param method: agglomeration method to use ("complete", "average", "mcquitty", ...)
