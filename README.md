@@ -32,7 +32,7 @@ normalization_pfaffl.R is an R script which performs normalization to a referenc
 
 hierarchical_clustering.R is an R script which performs hierarchical clustering. The example described is a clustering on the samples, on the raw Ct values. It is absolutely possible to make the clustering on the genes or on normalized values.
 Most functions used are in the R stats package.
-The dist() function accepts different methods, yet we have tested them all and have no qualification in advising which one is the best for the data set. You can learn more about this function [here](https://stat.ethz.ch/R-manual/R-devel/library/stats/html/dist.html).
+The dist() function accepts different methods, yet we have not tested them all and have no qualification in advising which one is the best for the data set. You can learn more about this function [here](https://stat.ethz.ch/R-manual/R-devel/library/stats/html/dist.html).
 The hclust() function also works with different methods. Changing method can drastically change the output tree you will get. Again here, we have no expertise about these methods. The choice will depend on the type of samples, data sat etc. All about hclust [here](https://stat.ethz.ch/R-manual/R-devel/library/stats/html/hclust.html).
 
 
