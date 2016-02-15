@@ -23,10 +23,10 @@ open_data.R is a simple R script with a single command line to open the csv file
 
 #### Normalization
 
-normalization_livak.R is an R script which performs normalization to a reference gene according to the Livak's method (2^-∆∆Ct - [article](http://www.gene-quantification.de/livak-2001.pdf)). In this script, only a ∆Ct between reference gene and target gene is calculated. If you wish to calculate ∆∆Ct between reference group and condition group, please ask for related R script (see contact below).
+normalization_livak.R is an R script which performs normalization to a reference gene according to the Livak's method (2^-∆∆Ct - see [article](http://www.gene-quantification.de/livak-2001.pdf)). In this script, only a ∆Ct between reference gene and target gene is calculated. If you wish to calculate ∆∆Ct between reference group and condition group, please ask for related R script (see contact below).
 A function to perform the normalization to multiple reference genes using the geometric mean is also described.
 
-normalization_pfaffl.R is an R script which performs normalization to a reference gene according to the Pfaffl's method ([article] (http://www.gene-quantification.de/pfaffl-nar-2001.pdf)). In this script, you will need to have added efficiency value for each gene (as described in pre_process_data.txt).
+normalization_pfaffl.R is an R script which performs normalization to a reference gene according to the Pfaffl's method (see [article] (http://www.gene-quantification.de/pfaffl-nar-2001.pdf)). In this script, you will need to have added efficiency value for each gene (as described in pre_process_data.txt).
 
 #### Analysis
 
