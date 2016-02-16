@@ -61,6 +61,7 @@ You can download it [here](https://www.rstudio.com/products/rstudio/download/).
 
 #### Third party R packages
 
+* psych
 * cluster
 * Distance
 * FactoMineR
