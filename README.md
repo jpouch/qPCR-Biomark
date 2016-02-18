@@ -75,5 +75,4 @@ You can download it [here](https://www.rstudio.com/products/rstudio/download/).
 Juliette Pouch - 2016
 * <pouch@biologie.ens.fr> | <juliette.pouch@gmail.com>
 * [Github](https://github.com/jpouch)
-* [Plateforme de qPCR à haut débit de l'IBENS](http://www.ibens.ens.fr/spip.php?rubrique46)
-* High-throughput qPCR core facility - IBENS contact: <qpcr@biologie.ens.fr>
+* High-throughput qPCR core facility - IBENS contact: <qpcr@biologie.ens.fr> ; [web page](http://www.ibens.ens.fr/spip.php?rubrique46)
