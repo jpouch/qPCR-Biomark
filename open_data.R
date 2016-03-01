@@ -1,7 +1,5 @@
 #! /usr/bin/Rscript
 
-########## RStudio ##########
-
 ### Opening file ###
 #' Make sure you are in the correct working directory (to get current working directory use getwd())
 #' 
