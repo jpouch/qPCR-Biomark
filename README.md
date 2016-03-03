@@ -12,7 +12,7 @@ R scripts to process and analyze qPCR data from Fluidigm Biomark HD
 ## Motivation
 
 qPCR-Biomark contains different R scripts developed to analyze high-throughput qPCR data from Fluidigm Biomark HD.
-Normalization to a reference gene is available for both [Livak](http://www.gene-quantification.de/livak-2001.pdf) and [Pfaffl](http://www.gene-quantification.de/pfaffl-nar-2001.pdf) methods for TaqMan chemistry and EvaGreen chemistry experiments.  
+Normalization to a reference gene is available for both [Livak](http://www.gene-quantification.de/livak-2001.pdf) and [Pfaffl](http://www.gene-quantification.de/pfaffl-nar-2001.pdf) methods for TaqMan® chemistry and EvaGreen chemistry experiments.  
 This repository was made to help researchers handling large sets of qPCR data from the Biomark HD. Any question, feedback and request are welcome. Feel free to contact us (see below).
 
 
