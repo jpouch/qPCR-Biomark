@@ -17,7 +17,7 @@
 #' Column C (3): sample type (standard, unknown...)
 #' Column D (4): sample concentration. Default value is 1, unless you specify a value when setting up the chip
 #' Column E (5): assay name
-#' Column F (6): assay type (unknown, reference...)
+#' Column F (6): assay type (test, reference...)
 #' Column G (7): Ct value
 #' Column H (8): relative concentration (only if standards are specified)
 #' Column I (9): quality score
@@ -67,7 +67,7 @@
 #' Column C (3): sample type (standard, unknown...)
 #' Column D (4): sample concentration. Default value is 1, unless you specify a value when setting up the chip
 #' Column E (5): assay name
-#' Column F (6): assay type (unknown, reference...)
+#' Column F (6): assay type (test, reference...)
 #' Column G (7): Ct value
 #' Column H (8): relative concentration (only if standards are specified)
 #' Column I (9): quality score
