@@ -3,7 +3,7 @@
 ### Opening file ###
 #' Make sure you are in the correct working directory (to get current working directory use getwd())
 #' 
-#'
+#' enter your csv file name (e. g. "file.csv")
 #' @param skip = 11 : allows to skip the file header
 #' @param sep = "," : specifies column separator
 #' @param dec = "." : specifies type of decimal
@@ -51,6 +51,6 @@ colnames(eva_data) <- c("sampleID", "geneID", "reference", "ct", "status", "effi
 #' The status column can be removed after this step
 #' @example
 
-df[is.na(df)==FALSE & df=="Fail",4] <- NA
+df[is.na(df$ct) == FALSE & df$status == "Fail", 4] <- NA
 
 df$status <- NULL
