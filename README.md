@@ -20,7 +20,7 @@ This repository was made to help researchers handling large sets of qPCR data fr
 
 pre_process_data.txt contains different information concerning the csv file extracted from Fluidigm Real-Time PCR Analysis software. Procedure to add efficiency values is also described (necessary if working with the Pfaffl's normalization method).
 
-open_data.R is a simple R script with a single command line to open the csv file, remove unused rows, assign type of data per column and which value to consider as NA. Data set may contain unvalid Ct values (Ct value different from 999 but with Fail status). Command lines to replace these values with NA are described.
+open_data.R is a simple R script with a single command line to open the csv file, remove unused rows, assign type of data per column and which value to consider as NA (i. e. 999). Data set may contain unvalid Ct values (Ct value different from 999 but with Fail status). Command lines to replace these values with NA are described.
 
 #### Normalization
 
@@ -50,7 +50,7 @@ With *git clone* from the repository
 
 These scripts allow quick processing and analysis of high-throughput qPCR data generated on the Biomark HD from Fluidigm.
 Largest data set are 9,216 rows, difficult to handle on Excel.  
-Using R to open and process data allows the user to quickly subset data and perform different analysis (average, standard deviation etc.)
+Using R to open and process data allows the user to quickly subset data and perform different analysis (average, standard deviation etc.) on the whole data set.
 
 We recommand using RStudio interface, because it is very user-friendly and easy to use for non expert R users.
 You can download it [here](https://www.rstudio.com/products/rstudio/download/).
