@@ -9,36 +9,73 @@
 #	http://www.gene-quantification.net/livak-2001.pdf
 ###########################################################################################
 
-#' Function to normalize qPCR data to one reference gene
+#' Function to normalize qPCR data to a reference sample and a reference gene
 #'
-#' definition of the function
+#' definition of the function to calculate the delta Ct between target gene and reference gene
 #' @param df: stands for data frame
 #' @param s1: column containing sample names, usually [1] when open_data.R has been followed
 #' @param ct1: column containing Ct values, usually [4] when open_data.R has been followed
-#' @param row: defines a subset data for the reference used (put your reference gene name in the quotes. Caution: R is case sensitive)
-#' @param ctRef: isolates Ct values for the reference
-#' @param ct1: all other Ct values in the data
-#' @param delta: calculates the difference between the Ct of the target and the Ct of the reference gene
-#' @param res: calculates ratio corresponding to the normalized values (see Livak's article)
+#' @param geneRef: defines a subset data for the reference used (put your reference gene name in the quotes. Caution: R is case sensitive)
+#' @param ctRef: isolates Ct values for the reference gene
+#' @param ct1: all other Ct values in the data (numeric type forced)
+#' @param delta1: calculates the difference between the Ct of the target and the Ct of the reference gene
 #'
 #' @example
-#' apply function to each row of the data frame
+#' 
+#' apply function to each row of the data frame and create new column to store the result
 #' @param taq_data: data frame to be processed
 #' @param 1: apply the function to each row
 #' @param function(row) norma_livak: calls the function you want to apply
 #' @param row[1]: refers to the first column containing the sample names
 #' @param row[4]: refers to the fourth column containing the ct values
+#' 
+#' @example 
 
-norma_livak <- function(df, s1, ct1){
-  row <- df[df$geneID=="yourReferenceGene" & df$sampleID==s1,]
-  ctRef <- row$ct
+delta1_livak <- function(df, s1, ct1){
+  geneRef <- df[df$geneID == "yourReferenceGene" & df$sampleID == s1,]
+  ctRef <- geneRef$ct
     
   ct1 <- as.numeric(ct1)
-  delta <- ct1 - ctRef
-  res <- 2^-delta 
+  delta1 <- ct1 - ctRef
 }
 
-taq_data$livak <- apply(taq_data, 1, function(row) norma_livak(taq_data, row[1], row[4]))
+
+taq_data$delta1 <- apply(taq_data, 1, function(row) delta1_livak(taq_data, row[1], row[4]))
+
+
+#' definition of the function to calculate the difference between delta Ct between experimental and reference sample
+#' @param df: stands for data frame
+#' @param g1: column containing gene names, usually [2] when open_data.R has been followed
+#' @param d1: column containing delta Ct previously calculated, normally [5]
+#' @param WT: defines a subset of data for the reference sample used (put your reference sample name in the quotes. Caution: R is case sensitive)
+#' @param deltaWT: isolates delta Ct values for the reference sample
+#' @param d1: all other delta Ct values in the data (numeric type forced)
+#' @param delta2: calculates two to the power of the double delta (see Livak's article)
+#' 
+#' @example 
+#' 
+#' apply function to each row of the data frame and create new column to store the result
+#' @param taq_data: data frame to be processed
+#' @param 1: apply function to each row
+#' @param function (row) delta2_livak: calls the function you want to apply
+#' @param row[2]: refers to the second column containing the gene names
+#' @param row[5]: refers to the fifth column containing the delta ct values previously calculated
+#' 
+#' @example 
+
+delta2_livak <- function(df, g1, d1){
+  WT <- df[df$sampleID == "yourReferenceSample" & df$geneID == g1,]
+  deltaWT <- WT$delta1
+  
+  d1 <- as.numeric(d1)
+  delta2 <- 2^(deltaWT - d1)
+}
+
+
+taq_data$delta2 <- apply(taq_data, 1, function(row) delta2_livak(taq_data, row[2], row[5]))
+
+
+
 
 
 #' Function to normalize qPCR data to a set of several reference genes
@@ -52,10 +89,10 @@ taq_data$livak <- apply(taq_data, 1, function(row) norma_livak(taq_data, row[1],
 #' @param df: stands for data frame
 #' @param s1: column containing sample names, usually [1] when open_data.R has been followed
 #' @param ct1: column containing Ct values, usually [4] when open_data.R has been followed
-#' @param row: defines a subset data for the references used
-#' @param ctRef: calculates the geometric mean of the Ct values for the reference genes
+#' @param geneRef: defines a subset data for the references used
+#' @param ctRef: calculates the geometric mean of the Ct values for the reference genes. REQUIRED PACKAGE: psych
 #' @param ct1: all other Ct values in the data
-#' @param delta: calculates the difference between the Ct of the target and the geometric mean of the reference genes
+#' @param delta1s: calculates the difference between the Ct of the target and the geometric mean of the reference genes
 #' @param res: calculates ratio corresponding to the normalized values (see Livak's article)
 #'
 #' @example
@@ -66,19 +103,50 @@ taq_data$livak <- apply(taq_data, 1, function(row) norma_livak(taq_data, row[1],
 #' @param row[1]: refers to the first column containing the sample names
 #' @param row[4]: refers to the fourth column containing the ct values
 
-norma_livak_geom <- function(df, s1, ct1){
-  row <- df[df$reference=="Reference" & df$sampleID==s1,]
-  geomRef <- geometric.mean(row$ct)
+delta1_livak_geom <- function(df, s1, ct1){
+  geneRefs <- df[df$reference=="Reference" & df$sampleID==s1,]
+  geomRef <- geometric.mean(geneRefs$ct)
     
   ct1 <- as.numeric(ct1)
-  delta <- ct1 - geomRef
-  res <- 2^-delta 
+  delta1s <- ct1 - geomRef
 }
 
-taq_data$livak_geom <- apply(taq_data, 1, function(row) norma_livak_geom(taq_data, row[1], row[4]))
+taq_data$delta1_geom <- apply(taq_data, 1, function(row) delta1_livak_geom(taq_data, row[1], row[4]))
+
+
+#' definition of the function to calculate the difference between delta Ct between experimental and reference sample
+#' @param df: stands for data frame
+#' @param g1: column containing gene names, usually [2] when open_data.R has been followed
+#' @param d1: column containing delta Ct previously calculated, normally [5]
+#' @param WT: defines a subset of data for the reference sample used (put your reference sample name in the quotes. Caution: R is case sensitive)
+#' @param deltaWT: isolates delta Ct values for the reference sample
+#' @param d1: all other delta Ct values in the data (numeric type forced)
+#' @param delta2: calculates two to the power of the double delta (see Livak's article)
+#' 
+#' @example 
+#' 
+#' apply function to each row of the data frame and create new column to store the result
+#' @param taq_data: data frame to be processed
+#' @param 1: apply function to each row
+#' @param function (row) delta2_livak: calls the function you want to apply
+#' @param row[2]: refers to the second column containing the gene names
+#' @param row[5]: refers to the fifth column containing the delta ct values previously calculated
+#' 
+#' @example 
+
+delta2_livak_geom <- function(df, g1, d1){
+  WT <- df[df$sampleID == "yourReferenceSample" & df$geneID == g1,]
+  deltaWT <- WT$delta1
+  
+  d1 <- as.numeric(d1)
+  delta2 <- 2^(deltaWT - d1)
+}
+
+
+taq_data$delta2_geom <- apply(taq_data, 1, function(row) delta2_livak_geom(taq_data, row[2], row[5]))
 
 
 #' NOTE: if no Reference status was assigned in Detector setup, you can create a vector containing all your reference genes
 #' @example reference_genes <- c("gene1", "gene2", "gene3", ...)
-#' and call it in row using %in%
-#' row <- df[df$geneID %in% reference_genes & df$sampleID==s1,]
+#' and call it in geneRefs using %in%
+#' geneRefs <- df[df$geneID %in% reference_genes & df$sampleID==s1,]
