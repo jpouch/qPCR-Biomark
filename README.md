@@ -5,7 +5,7 @@ R scripts to process and analyze qPCR data from Fluidigm Biomark HD
 
 **Creation : 2016/01/06**
 
-**Last update : 2016/02/15**
+**Last update : 2016/03/11**
 
 ---
 
@@ -27,7 +27,7 @@ open_data.R is a simple R script with a single command line to open the csv file
 livak_method.R is an R script which performs normalization to a reference gene according to the Livak's method (2^-∆∆Ct - see [article](http://www.gene-quantification.de/livak-2001.pdf)). In this script, only a ∆Ct between reference gene and target gene is calculated. If you wish to calculate ∆∆Ct between reference group and condition group, please ask for related R script (see contact below).
 A function to perform the normalization to multiple reference genes using the geometric mean is also described.
 
-pfaffl_method.R is an R script which performs normalization to a reference gene according to the Pfaffl's method (see [article] (http://www.gene-quantification.de/pfaffl-nar-2001.pdf)). In this script, you will need to have added efficiency value for each gene (as described in pre_process_data.txt).
+pfaffl_method.R is an R script which performs normalization to a reference sample and a reference gene according to the Pfaffl's method (see [article] (http://www.gene-quantification.de/pfaffl-nar-2001.pdf)). In this script, you will need to have added efficiency value for each gene (as described in pre_process_data.txt).
 
 #### Analysis
 
