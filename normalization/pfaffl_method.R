@@ -11,7 +11,7 @@
 
 #' Function to normalize qPCR data to one reference gene
 #'
-#'definition of the function to calculate delta Ct between experimental samples and reference sample
+#'definition of the function to calculate delta Ct between reference samples and experimental sample
 #' @param df: stands for data frame
 #' @param g1: column containing gene names, usually [2] when open_data.R has been followed
 #' @param ct1: column containing Ct values, usually [4] when open_data.R has been followed
