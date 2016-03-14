@@ -41,7 +41,7 @@ delta_pfaffl <- function(df, g1, ct1, e1){
   
   e1 <- as.numeric(e1)
   
-  delta <- e1^(ct1-ctWT)
+  delta <- e1^(ctWT-ct1)
 }
 
 
