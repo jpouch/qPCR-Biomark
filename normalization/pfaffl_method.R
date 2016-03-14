@@ -45,7 +45,7 @@ delta_pfaffl <- function(df, g1, ct1, e1){
 }
 
 
-taq_data$delat <- apply(taq_data, 1, function(row) delta_pfaffl(taq_data, row[2], row[4], row[5]))
+taq_data$delta <- apply(taq_data, 1, function(row) delta_pfaffl(taq_data, row[2], row[4], row[5]))
 
 #' definition of the function to calculate delta ratio between target genes and reference gene
 #' @param df: stands for data frame
