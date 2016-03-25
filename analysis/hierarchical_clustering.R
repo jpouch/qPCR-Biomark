@@ -35,10 +35,11 @@ mat_clust <- matrix(ct, nrow = 96, ncol = 96, dimnames = list(samples, genes))
 #' @param mat_clust: matrix to be processed
 #' @param 2: apply function by column
 #' @param median: calculates median
+#' @param na.rm = TRUE: allows to calculate median even though your data contains NA values
 #'
 #' @ example
 
-medians <- apply(mat_clust, 2, median)
+medians <- apply(mat_clust, 2, median, na.rm = TRUE)
 
 
 #' Calculate mean average deviation of the Ct values per gene
