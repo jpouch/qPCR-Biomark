@@ -21,7 +21,7 @@ colnames(taq_data) <- c("sampleID", "geneID", "reference", "ct", "status")
 #'
 #' @example EvaGreen chemistry data set (more columns with melting curve data)
 
-eva_data <- read.csv("file.csv", skip = 11, sep = ",", dec = ".", header = TRUE, fill = TRUE, colClasses = c("NULL", "character", "NULL", "NULL", "character", "character", "numeric", "NULL", "NULL", "character", "NULL", "NULL","NULL", "NULL", "NULL"))
+eva_data <- read.csv("file.csv", skip = 11, sep = ",", dec = ".", header = TRUE, fill = TRUE, colClasses = c("NULL", "character", "NULL", "NULL", "character", "character", "numeric", "NULL", "NULL", "character", "NULL", "NULL","NULL", "NULL", "NULL"), na.strings = "999")
 
 colnames(eva_data) <- c("sampleID", "geneID", "reference", "ct", "status")
 
@@ -36,7 +36,7 @@ colnames(eva_data) <- c("sampleID", "geneID", "reference", "ct", "status")
 taq_data <- read.csv("file.csv", skip = 11, sep = ",", dec = ".", header = TRUE, fill = TRUE, colClasses = c("NULL", "character", "NULL", "NULL", "character", "character", "numeric", "NULL", "NULL", "character", "NULL", "NULL", "numeric"), na.strings = "999")
 colnames(taq_data) <- c("sampleID", "geneID", "reference", "ct", "status", "efficiency")
 
-eva_data <- read.csv("file.csv", skip = 11, sep = ",", dec = ".", header = TRUE, fill = TRUE, colClasses = c("NULL", "character", "NULL", "NULL", "character", "character", "numeric", "NULL", "NULL", "character", "NULL", "NULL","NULL", "NULL", "NULL", "numeric"))
+eva_data <- read.csv("file.csv", skip = 11, sep = ",", dec = ".", header = TRUE, fill = TRUE, colClasses = c("NULL", "character", "NULL", "NULL", "character", "character", "numeric", "NULL", "NULL", "character", "NULL", "NULL","NULL", "NULL", "NULL", "numeric"), na.strings = "999")
 colnames(eva_data) <- c("sampleID", "geneID", "reference", "ct", "status", "efficiency")
 
 
