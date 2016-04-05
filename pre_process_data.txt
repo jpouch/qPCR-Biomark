@@ -32,13 +32,16 @@
 ## Add efficiency value
 #' 1. Standard samples must be run on the chip (at least three dilutions) and referenced as "Standard" in the sample setup
 
-#' 2. On the Real-time Analysis software, the Calibration View displays curves for each assay. The slope cannot be extracted from the software. Values have to be stored manually in a csv file (formula used is E = 10 ^ (-1 / slope))
+#' 2. On the Real-time Analysis software, the Calibration View displays curves for each assay.
+#' The slope cannot be extracted from the software.
+#' Values have to be stored manually in a csv file (formula used is E = 10 ^ (-1 / slope), where slope is negative)
 
 #' 3. In the data file:
 #'	paste the efficiency file in a new sheet
 #'	use vlookup function =VLOOKUP(lookup_value, table_array, col_index_num, [range_lookup])
 #'	# lookup_value is the assay name, i.e cell E13
-#'	# table_array is the efficiency file in Sheet2. $ must be added to loop the vlookup function on the non-empty rows only (ex: Sheet2.$A$1:$C$96)
+#'	# table_array is the efficiency file in Sheet2. $ must be added to loop the vlookup function on the non-empty rows only
+	(ex: Sheet2.$A$1:$C$96)
 #'	# col_index_num is the column number where the efficiency value is stored (2 or 3 if slope value is kept)
 #'	# [range_lookup] must be set to FALSE (0)
 	
@@ -86,13 +89,16 @@
 ## Add efficiency value
 #' 1. Standard samples must be run on the chip (at least three dilutions) and referenced as "Standard" in the sample setup
 
-#' 2. On the Real-time Analysis software, the Calibration View displays curves for each assay. The slope cannot be extracted from the software. Values have to be stored manually in a csv file (formula used is E = 10 ^ (-1 / slope))
+#' 2. On the Real-time Analysis software, the Calibration View displays curves for each assay.
+#' The slope cannot be extracted from the software.
+#' Values have to be stored manually in a csv file (formula used is E = 10 ^ (-1 / slope), where slope is negative)
 
 #' 3. In the data file:
 #'	paste the efficiency file in a new sheet
 #'	use vlookup function =VLOOKUP(lookup_value, table_array, col_index_num, [range_lookup])
 #'	# lookup_value is the assay name, i.e cell E13
-#'	# table_array is the efficiency file in Sheet2. $ must be added to loop the vlookup function on the non-empty rows only (ex: Sheet2.$A$1:$C$96)
+#'	# table_array is the efficiency file in Sheet2. $ must be added to loop the vlookup function on the non-empty rows only
+	(ex: Sheet2.$A$1:$C$96)
 #'	# col_index_num is the column number where the efficiency value is stored (2 or 3 if slope value is kept)
 #'	# [range_lookup] must be set to FALSE (0)
 	
