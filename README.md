@@ -5,7 +5,7 @@ R scripts to process and analyze qPCR data from Fluidigm Biomark HD
 
 **Creation : 2016/01/06**
 
-**Last update : 2016/03/11**
+**Last update : 2016/04/05**
 
 ---
 
@@ -65,14 +65,17 @@ You can download it [here](https://www.rstudio.com/products/rstudio/download/).
 
 #### Third party R packages
 
-* psych
+
 * cluster
+* data.table
 * Distance
 * FactoMineR
 * ggplot2
 * gtools
 * Hmisc
+* psych
 * RColorBrewer
+* stringr
 
 ## Authors and Contact
 
