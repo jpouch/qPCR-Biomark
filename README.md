@@ -40,6 +40,10 @@ Most functions used are in the R stats package.
 The dist() function accepts different methods, yet we have not tested them all and have no qualification in advising which one is the best for the data set. You can learn more about this function [here](https://stat.ethz.ch/R-manual/R-devel/library/stats/html/dist.html).  
 The hclust() function also works with different methods. Changing method can drastically change the output tree (dendrogram) you will get. Again here, we have no expertise about these methods. The choice will depend on the type of samples, data set etc. All about hclust [here](https://stat.ethz.ch/R-manual/R-devel/library/stats/html/hclust.html).
 
+statistical_analysis.R is an R script which allows to run statistical test of your choice to the data.
+Steps to change the data format to get one gene per column is described in the script.
+Too many NA values in one column causes the sapply() function to fail. Command lines to count NA values per column and remove the corresponding columns are described. The threshold chosen is arbitrary and can be changed according to your needs.
+For our example we chose wilcox.test (Wilcoxon rank sum aka Mann-Whitney test), but the command works with other tests (e. g. t.test, kruskal.test etc.). The choice of the test depends on the size of the groups to be compared, the matching of the groups (independancy, paired etc.). This [webpage](http://www.biostathandbook.com/testchoice.html) gives interesting tips for choosing the right test for your data.
 
 ## Get qPCR-Biomark
 
