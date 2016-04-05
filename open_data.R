@@ -9,7 +9,8 @@
 #' @param dec = "." : specifies type of decimal
 #' @param header = TRUE : extracts header name of each column
 #' @param fill = TRUE : bypasses error if some columns do not have the same row number
-#' @param colClasses : specifies type of value stored in each column (character, number, factor...). Use "NULL" for columns that will not be used
+#' @param colClasses : specifies type of value stored in each column (character, number, factor...).
+#' Use "NULL" for columns that you do not want to use.
 #' @param na.string : change all the 999 to NA
 #' @example TaqMan chemistry data set
 #' colnames() : only if you want to rename the first three columns that by default are "Name", "Name.1" and "Type.1"
