@@ -71,10 +71,17 @@ taq_sata <- as.data.frame(taq_stat)
 #' @ param sapply: returns the p-value in a vector
 #' @ param taq_stat[-1]: apply test to whole data frame
 #' @param  function(x): apply following function
-#' @param unlist(wilcox.test): apply Wilcoxon rank sun test (also known as Mann-Whitney test for non-parametric data)
+#' @param unlist(wilcox.test): apply Wilcoxon rank sum test (also known as Mann-Whitney test for non-parametric data)
 #' @param x~taq_stat$sampleID, na.action = "na.exclude": specifies where the condition/group info is and exclude the possible NA values in the data
 #' @param ["p-value"]: extract p-value from test output
 #'
 #' @example
 
 taq_wilcox <- as.data.frame(sapply(taq_stat[-1], function(x) unlist(wilcox.test(x~taq_stat$sampleID, na.action = "na.exclude")["p.value"])))
+
+#'
+#' Assign legend to p-values
+#' You can automatically assign stars to p-values with the function stars.pval() from the gtools package.
+#' You need to store the p-values in a vector
+#' (in our example you can do: pvalues <- sapply(taq_stat[-1], function(x) unlist(wilcox.test(x~taq_stat$sampleID, na.action = "na.exclude")["p.value"]))
+#' Then run stars.pval(pvalues)
