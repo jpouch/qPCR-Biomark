@@ -12,6 +12,7 @@
 #' @param colClasses : specifies type of value stored in each column (character, number, factor...).
 #' Use "NULL" for columns that you do not want to use.
 #' @param na.string : change all the 999 to NA
+#'
 #' @example TaqMan chemistry data set
 #' colnames() : only if you want to rename the first three columns that by default are "Name", "Type", "Name.1" and "Type.1"
 
@@ -34,6 +35,7 @@ colnames(eva_data) <- c("sampleID", "type", "concentration", "geneID", "referenc
 #' @param is.na(df$ct) == FALSE: selects all non NA values in the ct column
 #' @param df$status=="Fail": selects rows with Fail status
 #' @param <- NA: attributes NA to ct values with Fail status
+#'
 #' @example
 #' The status column can be removed after this step
 #' @example
