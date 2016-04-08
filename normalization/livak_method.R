@@ -68,7 +68,7 @@ delta2_livak <- function(df, g1, d1){
   deltaWT <- WT$delta1
   
   d1 <- as.numeric(d1)
-  delta2 <- 2^(deltaWT - d1)
+  delta2 <- 2^-(deltaWT - d1)
 }
 
 
