@@ -74,7 +74,7 @@ You can download it [here](https://www.rstudio.com/products/rstudio/download/).
  | data.table | ggplot2 | Hmisc | psych | qdap | reshape2 | stringr
 ------------ | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | -------------
 command | as.data.table, := | geom_point, geom_smooth | %nin% | geometric.mean | lookup | melt | str_detect |
-file | statistical_test.R | add_efficiency.R |  | livak_method.R, pfaffl_method.R | add_efficiency.R | add_efficiency.R | |
+file | statistical_test.R | add_efficiency.R |  | livak_method.R | add_efficiency.R | add_efficiency.R | |
 
 ## Authors and Contact
 
