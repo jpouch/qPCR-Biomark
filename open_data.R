@@ -34,12 +34,13 @@ colnames(eva_data) <- c("sampleID", "type", "concentration", "geneID", "referenc
 #' df stands for data frame. To be replaced with your data frame name (i.e taq_data)
 #' @param is.na(df$ct) == FALSE: selects all non NA values in the ct column
 #' @param df$status=="Fail": selects rows with Fail status
+#' @param 6: column containing Ct values
 #' @param <- NA: attributes NA to ct values with Fail status
 #'
 #' @example
 #' The status column can be removed after this step
 #' @example
 
-df[is.na(df$ct) == FALSE & df$status == "Fail", 4] <- NA
+df[is.na(df$ct) == FALSE & df$status == "Fail", 6] <- NA
 
 df$status <- NULL
