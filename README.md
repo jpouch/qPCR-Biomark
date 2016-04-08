@@ -19,12 +19,14 @@ This repository was made to help researchers handling large sets of qPCR data fr
 ## Principle
 
 qPCR results from a Biomark experiment can be exported as csv file from Fluidigm Real-Time PCR Analysis software.
-**pre_process_data.txt** describes content for each column of the csv and specifies those that will be used for further analysis (sample name, gene name, Ct value, quality status).
-Procedure to add efficiency values per gene is also described (required if working with the Pfaffl's normalization method).
+**about_data.txt** describes content for each column of the csv and specifies those that will be used for further analysis (sample name, sample type, standard concentration, gene name, gene type, Ct value, quality status).
 
 **open_data.R** is a simple R script with a single command line to open the csv file in your R session, remove unused rows, assign type of data per column and which value to consider as NA (i. e. 999).
 Data set may contain unvalid Ct values (Ct value different from 999 but with Fail status) - it can be saturated signals from too high expressed genes (Ct < 4 - software will be unable to distinguish between noise and true amplification) or signals that give bad amplification curve.
 Command lines to replace these values with NA are described.
+
+**add_efficiency.R** describes how to extract slopes to calculate efficiency for each gene (necessary if working with Pfaffl's method).
+Samples used as standard are stored in a new data frame. Data are then stored in a matrix used to create a molten data frame. Coefficients from linear regression are isolated in a new data frame, and efficiency values are calculated using the 10^(-1/slope) formula. The lookup function allows to assign efficiency value to each gene along the data frame from *open_data.R*.
 
 #### Normalization
 
