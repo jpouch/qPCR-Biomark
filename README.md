@@ -76,6 +76,7 @@ You can download it [here](https://www.rstudio.com/products/rstudio/download/).
 * Hmisc
 * psych
 * RColorBrewer
+* reshape2
 * stringr
 
 ## Authors and Contact
