@@ -81,3 +81,14 @@ eff$efficiency <- 10^(-1/eff$slope)
 #'
 #' @example
 flui$efficiency <- lookup(flui$geneID, eff)
+
+
+### Optional ###
+#'
+#' Visualize standard curves with ggplot2
+#'
+
+ggplot(std, aes(x = slope, y = value, color = genes)) +
+  geom_point(size = 3) +
+  labs(x = "log[C]", y = "Ct") + 
+  geom_smooth(method = "lm", se = FALSE)
