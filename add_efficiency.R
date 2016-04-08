@@ -80,7 +80,7 @@ eff$efficiency <- 10^(-1/eff$slope)
 #' @param eff: data frame containing values to be extracted and assigned
 #'
 #' @example
-flui$efficiency <- lookup(flui$geneID, eff)
+taq_data$efficiency <- lookup(taq_data$geneID, eff)
 
 
 ### Optional ###
