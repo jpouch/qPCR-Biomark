@@ -10,9 +10,9 @@
 #'
 #' @example 96.96 experiment (96 samples, 96 genes)
 
-ct <- taq_data[, 4]
+ct <- taq_data[, 6]
 
-genes <- unique(taq_data[, 2])
+genes <- unique(taq_data[, 4])
 
 samples <- unique(taq_data[, 1])
 
