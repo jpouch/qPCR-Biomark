@@ -1,9 +1,4 @@
-########## Pre-processing data file (TaqMan chemistry) ##########
-
-### IMPORTANT: open extracted csv ###
-#' Text Import parameters:
-#'	# 1. Character set = UTF-8
-#'	# 2. Separated by = Tab | Comma | Semi-colon
+########## About the data file (TaqMan chemistry) ##########
 
 ### File content
 ## 12 first rows
@@ -19,44 +14,17 @@
 #' Column E (5): assay name
 #' Column F (6): assay type (test, reference...)
 #' Column G (7): Ct value
-#' Column H (8): relative concentration (only if standards are specified)
+#' Column H (8): relative concentration
 #' Column I (9): quality score
 #' Column J (10): quality status (Pass or Fail)
 #' Column K (11): assay threshold value
-#' Column L (12): comments. Column can be used to add efficiency value
+#' Column L (12): comments
 
-#' Columns used for analysis: 2, 5, 6, 7, 10 (and 12 if efficiency is used)
-
-
-### Optional
-## Add efficiency value
-#' 1. Standard samples must be run on the chip (at least three dilutions) and referenced as "Standard" in the sample setup
-
-#' 2. On the Real-time Analysis software, the Calibration View displays curves for each assay.
-#' The slope cannot be extracted from the software.
-#' Values have to be stored manually in a csv file (formula used is E = 10 ^ (-1 / slope), where slope is negative)
-
-#' 3. In the data file:
-#'	paste the efficiency file in a new sheet
-#'	use vlookup function =VLOOKUP(lookup_value, table_array, col_index_num, [range_lookup])
-#'	# lookup_value is the assay name, i.e cell E13
-#'	# table_array is the efficiency file in Sheet2. $ must be added to loop the vlookup function on the non-empty rows only
-	(ex: Sheet2.$A$1:$C$96)
-#'	# col_index_num is the column number where the efficiency value is stored (2 or 3 if slope value is kept)
-#'	# [range_lookup] must be set to FALSE (0)
-	
-#'	# example: = VLOOKUP(E13;Sheet2.$A$1:$C$96;3;0)
-	
-#' 4. Save file as csv
+#' Columns used for analysis: 2, 3, 4, 5, 6, 7, 10
 
 
 
-########## Pre-processing data file (EvaGreen chemistry) ##########
-
-### IMPORTANT: open extracted csv ###
-#' Text Import parameters:
-#'	# 1. Character set = UTF-8
-#'	# 2. Separated by = Tab | Comma | Semi-colon
+########## About the data file (EvaGreen chemistry) ##########
 
 ### File content
 ## 12 first rows
@@ -72,7 +40,7 @@
 #' Column E (5): assay name
 #' Column F (6): assay type (test, reference...)
 #' Column G (7): Ct value
-#' Column H (8): relative concentration (only if standards are specified)
+#' Column H (8): relative concentration
 #' Column I (9): quality score
 #' Column J (10): quality status (Pass or Fail)
 #' Column K (11): assay threshold value
@@ -80,28 +48,6 @@
 #' Column M (13): Tm Out Range
 #' Column N (14): Tm Peak Ratio
 #' Column O (15): Tm Peak Call (Pass or Fail)
-#' Column P (16): User Defined. Column can be used to add efficiency value
+#' Column P (16): User Defined
 
-#' Columns used for analysis: 2, 5, 6, 7, 10 (and 16 if efficiency is used)
-
-
-### Optional
-## Add efficiency value
-#' 1. Standard samples must be run on the chip (at least three dilutions) and referenced as "Standard" in the sample setup
-
-#' 2. On the Real-time Analysis software, the Calibration View displays curves for each assay.
-#' The slope cannot be extracted from the software.
-#' Values have to be stored manually in a csv file (formula used is E = 10 ^ (-1 / slope), where slope is negative)
-
-#' 3. In the data file:
-#'	paste the efficiency file in a new sheet
-#'	use vlookup function =VLOOKUP(lookup_value, table_array, col_index_num, [range_lookup])
-#'	# lookup_value is the assay name, i.e cell E13
-#'	# table_array is the efficiency file in Sheet2. $ must be added to loop the vlookup function on the non-empty rows only
-	(ex: Sheet2.$A$1:$C$96)
-#'	# col_index_num is the column number where the efficiency value is stored (2 or 3 if slope value is kept)
-#'	# [range_lookup] must be set to FALSE (0)
-	
-#'	# example: = VLOOKUP(E13;Sheet2.$A$1:$C$96;3;0)
-	
-#' 4. Save file csv
+#' Columns used for analysis: 2, 3, 4, 5, 6, 7, 10
