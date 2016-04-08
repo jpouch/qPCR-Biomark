@@ -71,16 +71,10 @@ You can download it [here](https://www.rstudio.com/products/rstudio/download/).
 
 #### Third party R packages
 
-* data.table
-* FactoMineR
-* ggplot2
-* gtools
-* Hmisc
-* psych
-* qdap
-* RColorBrewer
-* reshape2
-* stringr
+ | data.table | FactoMineR | ggplot2 | Hmisc | psych | qdap | RColorBrewer | reshape2 | stringr
+------------ | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | -------------
+as.data.table | Content from cell 2
+Content in the first column | Content in the second column
 
 ## Authors and Contact
 
