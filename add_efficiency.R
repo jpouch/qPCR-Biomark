@@ -19,7 +19,7 @@ standard[,1] <- NULL
 #' @example
 
 
-standard$conc <- log10(standard$conc)
+standard$concentration <- log10(standard$concentration)
 
 #' Create matrix to be melted
 #'
