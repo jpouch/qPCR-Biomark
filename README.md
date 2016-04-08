@@ -71,10 +71,10 @@ You can download it [here](https://www.rstudio.com/products/rstudio/download/).
 
 #### Third party R packages
 
- | data.table | FactoMineR | ggplot2 | Hmisc | psych | qdap | RColorBrewer | reshape2 | stringr
------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | -------------
-as.data.table | Content from cell 2
-Content in the first column | Content in the second column
+ | data.table | ggplot2 | Hmisc | psych | qdap | reshape2 | stringr
+------------ | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | -------------
+command | as.data.table, := | geom_point, geom_smooth | %nin% | geometric.mean | lookup | melt
+file | statistical_test.R | add_efficiency.R |  | livak_method.R, pfaffl_method.R | add_efficiency.R | add_efficiency.R | str_detect |
 
 ## Authors and Contact
 
