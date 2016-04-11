@@ -5,7 +5,7 @@
 
 **Creation : 2016/01/06**
 
-**Last update : 2016/04/08**
+**Last update : 2016/04/11**
 
 ---
 
@@ -26,7 +26,7 @@ Data set may contain unvalid Ct values (Ct value different from 999 but with Fai
 Command lines to replace these values with NA are described.
 
 **add_efficiency.R** describes how to extract slopes to calculate efficiency for each gene (necessary if working with Pfaffl's method).
-Samples used as standard are stored in a new data frame. Data are then stored in a matrix used to create a molten data frame. Coefficients from linear regression are isolated in a new data frame, and efficiency values are calculated using the 10^(-1/slope) formula. The lookup function allows to assign efficiency value to each gene along the data frame from *open_data.R*.
+Data from the Standard samples is stored in a matrix used to create a molten data frame. Coefficients from linear regression are isolated in a new data frame, and efficiency values are calculated using the 10^(-1/slope) formula. The lookup function allows to assign efficiency value to each gene along the data frame from *open_data.R*.
 
 #### Normalization
 
