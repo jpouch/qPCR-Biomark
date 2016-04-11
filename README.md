@@ -1,6 +1,6 @@
 # qPCR-Biomark
 **R scripts to process and analyze qPCR data from Fluidigm Biomark HD**
-
+![qpcr logo](/Volumes/qpcradm/administratif/logos et modèles/logo-qPCRHD.png)
 ---
 
 **Creation : 2016/01/06**
