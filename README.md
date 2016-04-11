@@ -33,7 +33,7 @@ Data from the Standard samples is stored in a matrix used to create a molten dat
 **livak_method.R** is an R script which performs normalization to a reference gene and a reference sample, according to the Livak's method (2^-∆∆Ct - see [article](http://www.gene-quantification.de/livak-2001.pdf)). The calculation is performed in two steps: a first delta Ct to the reference gene, and a second delta to the reference sample.
 A function to perform the normalization to multiple reference genes using the geometric mean is also described (psych package required). This method is described in *"Accurate normalization of real-time quantitative RT-PCR data by geometric averaging of multiple internal control genes"* Vandesompele J. et al - Genome Biology 2002, 3(7).
 
-**pfaffl_method.R** is an R script which performs normalization to a reference sample and a reference gene according to the Pfaffl's method (see [article] (http://www.gene-quantification.de/pfaffl-nar-2001.pdf)). In this script, you will need to have added efficiency value for each gene (as described in pre_process_data.txt). The calculation is performed in two steps: delta Ct to the reference sample, and ratio between deltas for reference gene and other genes.
+**pfaffl_method.R** is an R script which performs normalization to a reference sample and a reference gene according to the Pfaffl's method (see [article] (http://www.gene-quantification.de/pfaffl-nar-2001.pdf)). In this script, you will need to have added efficiency value for each gene (as described in add_efficiency.R). The calculation is performed in two steps: delta Ct to the reference sample, and ratio between deltas for reference gene and other genes.
 
 #### Analysis
 
