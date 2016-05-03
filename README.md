@@ -79,6 +79,6 @@ file | statistical_test.R | add_efficiency.R |  | livak_method.R | add_efficienc
 ## Authors and Contact
 
 Juliette Pouch - 2016
-* <pouch@biologie.ens.fr> | <juliette.pouch@gmail.com>
+* <juliette.hamroune@inserm.fr> | <juliette.pouch@gmail.com>
 * [Github](https://github.com/jpouch)
 * High-throughput qPCR core facility - IBENS contact: <qpcr@biologie.ens.fr> ; [web page](http://www.ibens.ens.fr/spip.php?rubrique46)
