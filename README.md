@@ -16,7 +16,9 @@ Normalization to a reference gene is available for both [Livak](http://www.gene-
 This repository was made to help researchers handling large sets of qPCR data from the Biomark HD. Any question, feedback and request are welcome. Feel free to contact us (see below).
 
 
-## Principle
+## Repository content
+
+#### Handling Biomark data in R
 
 qPCR results from a Biomark experiment can be exported as csv file from Fluidigm Real-Time PCR Analysis software.
 **about_data.txt** describes content for each column of the csv and specifies those that will be used for further analysis (sample name, sample type, standard concentration, gene name, gene type, Ct value, quality status).
@@ -33,7 +35,7 @@ Data from the Standard samples is stored in a matrix used to create a molten dat
 **livak_method.R** is an R script which performs normalization to a reference gene and a reference sample, according to the Livak's method (2^-∆∆Ct - see [article](http://www.gene-quantification.de/livak-2001.pdf)). The calculation is performed in two steps: a first delta Ct to the reference gene, and a second delta to the reference sample.
 A function to perform the normalization to multiple reference genes using the geometric mean is also described (psych package required). This method is described in *"Accurate normalization of real-time quantitative RT-PCR data by geometric averaging of multiple internal control genes"* Vandesompele J. et al - Genome Biology 2002, 3(7).
 
-**pfaffl_method.R** is an R script which performs normalization to a reference sample and a reference gene according to the Pfaffl's method (see [article] (http://www.gene-quantification.de/pfaffl-nar-2001.pdf)). In this script, you will need to have added efficiency value for each gene (as described in add_efficiency.R). The calculation is performed in two steps: delta Ct to the reference sample, and ratio between deltas for reference gene and other genes.
+**pfaffl_method.R** is an R script which performs normalization to a reference sample and a reference gene according to the Pfaffl's method (see [article] (http://www.gene-quantification.de/pfaffl-nar-2001.pdf)). In this script, you will need to have added efficiency value for each gene (as described in *add_efficiency.R*). The calculation is performed in two steps: delta Ct to the reference sample, and ratio between deltas for reference gene and other genes.
 
 #### Analysis
 
@@ -56,10 +58,10 @@ With *git clone* from the repository
 ```	git clone https://github.com/jpouch/qPCR-Biomark ```
 
 
-## Usage
+## Use
 
 These scripts allow quick processing and analysis of high-throughput qPCR data generated on the Biomark HD from Fluidigm.
-Largest data set are 9,216 rows, difficult to handle on Excel.  
+Largest data set are 9,216 rows and 16 columns, difficult to handle on Excel (fastidious data sampling...).  
 Using R to open and process data allows the user to quickly subset data and perform different analysis (average, standard deviation etc.) on the whole data set.
 
 We recommand using RStudio interface, because it is very user-friendly and easy to use for non expert R users.
