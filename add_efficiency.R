@@ -54,6 +54,7 @@ std <- na.omit(melt(mat, id=names(mat)[97], measure=names(mat)[1:96], variable =
 #' apply function to list of interest
 #' create data frame with only gene names and slope value
 #' calculate efficiency with 10^(-1/slope) formula
+#' remove slope column in order to retrieve efficiency with the lookup() function (see below)
 #'
 #' @example
 
@@ -67,11 +68,12 @@ fits <- nullToNA(fits)
 
 eff <- data.frame(genes = names(fits), do.call(rbind, fits))[c(1,3)]
 eff$efficiency <- 10^(-1/eff$slope)
+eff$slope <- NULL
 
 #' Add efficiency values to the data frame of interest
 #'
 #' @param taq_data$geneID: column containing value to be looked up
-#' @param eff: data frame containing values to be extracted and assigned
+#' @param eff: data frame containing values to be extracted and assigned (must be two columns only)
 #' @param missing: attributes NA to any value missing in the eff data (i. e. genes not present in the eff data frame)
 #'
 #' @example
