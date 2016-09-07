@@ -14,7 +14,7 @@
 #' @param na.string : change all the 999 to NA
 #'
 #' @example TaqMan chemistry data set
-#' colnames() : only if you want to rename the first three columns that by default are "Name", "Type", "Name.1" and "Type.1"
+#' colnames() : only if you want to rename the first four columns that by default are "Name", "Type", "Name.1" and "Type.1"
 
 taq_data <- read.csv("file.csv", skip = 11, sep = ",", dec = ".", header = TRUE, fill = TRUE, colClasses = c("NULL", "character", "character", "numeric", "character", "character", "numeric", "NULL", "NULL", "character", "NULL", "NULL"), na.strings = "999")
 
