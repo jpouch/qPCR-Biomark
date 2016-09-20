@@ -61,7 +61,7 @@ taq_stat <- taq_stat[, c(4 ,6, 14, 21, 32):= NULL]
 #'
 #' @ example
 
-taq_sata <- as.data.frame(taq_stat)
+taq_stat <- as.data.frame(taq_stat)
 
 #'
 #' Apply statistical test to each column for a comparison of two conditions/groups (Wilcoxon test chosen for example)
