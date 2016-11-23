@@ -23,12 +23,12 @@ This repository was made to help researchers handling large sets of qPCR data fr
 qPCR results from a Biomark experiment can be exported as csv file from Fluidigm Real-Time PCR Analysis software.
 **about_data.txt** describes content for each column of the csv and specifies those that will be used for further analysis (sample name, sample type, standard concentration, gene name, gene type, Ct value, quality status).
 
-**open_data.R** is a simple R script with a single command line to open the csv file in your R session, remove unused rows, assign type of data per column and which value to consider as NA (i. e. 999).
+**open_data.R** is a simple R script with a single command line to open the csv file in your R session, remove unused rows and colmuns, assign type of data per column and which value to consider as NA (i. e. 999).
 Data set may contain unvalid Ct values (Ct value different from 999 but with Fail status) - it can be saturated signals from too high expressed genes (Ct < 4 - software will be unable to distinguish between noise and true amplification) or signals that give bad amplification curve.
-Command lines to replace these values with NA are described.
+Command lines to replace these values with NA are described at the end of the script, along with the command to rename column names if needed.
 
 **add_efficiency.R** describes how to extract slopes to calculate efficiency for each gene (necessary if working with Pfaffl's method).
-Data from the Standard samples is stored in a matrix used to create a molten data frame. Coefficients from linear regression are isolated in a new data frame, and efficiency values are calculated using the 10^(-1/slope) formula. The lookup function allows to assign efficiency value to each gene along the data frame from *open_data.R*.
+Data from the Standard samples is stored in a matrix which is used to create a molten data frame. Coefficients from linear regression are isolated in a new data frame, and efficiency values are calculated using the 10^(-1/slope) formula. The lookup function allows to assign efficiency value to each gene along the data frame from *open_data.R* in a new column.
 
 #### Normalization
 
