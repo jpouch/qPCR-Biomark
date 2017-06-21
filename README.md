@@ -74,6 +74,7 @@ You can download it [here](https://www.rstudio.com/products/rstudio/download/).
 #### Third party R packages
 
 data.table, ggplot2, Hmisc, psych, qdap, reshape2, stringr
+
 as.data.table, := | geom_point, geom_smooth | %nin% | geometric.mean | lookup | melt | str_detect
 
 ## Authors and Contact
