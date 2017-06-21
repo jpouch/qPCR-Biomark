@@ -73,10 +73,8 @@ You can download it [here](https://www.rstudio.com/products/rstudio/download/).
 
 #### Third party R packages
 
- | data.table | ggplot2 | Hmisc | psych | qdap | reshape2 | stringr
------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | -------------
-command | as.data.table, := | geom_point, geom_smooth | %nin% | geometric.mean | lookup | melt | str_detect |
-file | statistical_test.R | add_efficiency.R |  | livak_method.R | add_efficiency.R | add_efficiency.R | |
+data.table, ggplot2, Hmisc, psych, qdap, reshape2, stringr
+as.data.table, := | geom_point, geom_smooth | %nin% | geometric.mean | lookup | melt | str_detect
 
 ## Authors and Contact
 
