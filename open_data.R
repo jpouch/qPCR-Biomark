@@ -16,14 +16,18 @@
 #' @example TaqMan chemistry data set
 #' colnames() : only if you want to rename the first four columns that by default are "Name", "Type", "Name.1" and "Type.1"
 
-taq_data <- read.csv("file.csv", skip = 11, sep = ",", dec = ".", header = TRUE, fill = TRUE, colClasses = c("NULL", "character", "character", "numeric", "character", "character", "numeric", "NULL", "NULL", "character", "NULL", "NULL"), na.strings = "999")
+taq_data <- read.csv("file.csv", skip = 11, sep = ",", dec = ".", header = TRUE, fill = TRUE,
+                     colClasses = c("NULL", "character", "character", "numeric", "character", "character", "numeric", "NULL", "NULL", "character", "NULL", "NULL"),
+                     na.strings = "999")
 
 colnames(taq_data) <- c("sampleID", "type", "concentration", "geneID", "reference", "ct", "status")
 
 #'
 #' @example EvaGreen chemistry data set (more columns with melting curve data)
 
-eva_data <- read.csv("file.csv", skip = 11, sep = ",", dec = ".", header = TRUE, fill = TRUE, colClasses = c("NULL", "character", "character", "numeric", "character", "character", "numeric", "NULL", "NULL", "character", "NULL", "NULL","NULL", "NULL", "NULL"), na.strings = "999")
+eva_data <- read.csv("file.csv", skip = 11, sep = ",", dec = ".", header = TRUE, fill = TRUE,
+                     colClasses = c("NULL", "character", "character", "numeric", "character", "character", "numeric", "NULL", "NULL", "character", "NULL", "NULL","NULL", "NULL", "NULL"),
+                     na.strings = "999")
 
 colnames(eva_data) <- c("sampleID", "type", "concentration", "geneID", "reference", "ct", "status")
 
