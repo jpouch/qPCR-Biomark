@@ -2,11 +2,13 @@
 
 ### Apply statistical test to the qPCR data set ###
 #'
-#' The data that has been used so far is long-format data: all genes are stored in one column and their corresponding values in another column.
+#' The data that has been used so far is long-format data:
+#' all genes are stored in one column and their corresponding values in another column.
 #' To perform a statiscal test across the data, we need to change the format from long to wide to get one column per gene.
 #'
 #' @param taq_data: data frame to be casted.
-#' @param taq_data$sampleID: column used as ID variable. The names should clearly indicate conditions or groups to be compared. If easier, you can add a "condition" or "group" column and specify it to dcast as following: taq_data$sampleID + taq_data$condition ~ taq_data$geneID
+#' @param taq_data$sampleID: column used as ID variable. The names should clearly indicate conditions or groups to be compared.
+#' If easier, you can add a "condition" or "group" column and specify it to dcast as following: taq_data$sampleID + taq_data$condition ~ taq_data$geneID
 #' @param taq_data$geneID: column used to put all genes in individuals columns.
 #' @param value.var: column containing values (here we choose the normalized values in column "delta2", but you can indicate the column of your choice.)
 #' 
@@ -15,7 +17,8 @@
 taq_stat <- dcast(taq_data, taq_data$sampleID ~ taq_data$geneID, value.var="delta2")
 
 #'
-#' Some of the columns may contains a lot of NA values. Performing a statiscal test on those columns will generate an error. We need to remove those columns.
+#' Some of the columns may contains a lot of NA values. Performing a statiscal test on those columns will generate an error.
+#' We need to remove those columns.
 #' The data frame needs to be set as a data table in order to be able to use the ":=" assignment from the data.table package to remove the columns.
 #'
 #' @ example: set taq_data as data table
@@ -77,7 +80,8 @@ taq_stat <- as.data.frame(taq_stat)
 #'
 #' @example
 
-taq_wilcox <- as.data.frame(sapply(taq_stat[-1], function(x) unlist(wilcox.test(x~taq_stat$sampleID, na.action = "na.exclude")["p.value"])))
+taq_wilcox <- as.data.frame(sapply(taq_stat[-1],
+                                   function(x) unlist(wilcox.test(x~taq_stat$sampleID, na.action = "na.exclude")["p.value"])))
 
 #'
 #' Assign legend to p-values
