@@ -18,7 +18,8 @@ samples <- unique(taq_data[, 1])
 
 
 #' Generate matrix
-#' In this example, the clustering is made on the samples. If you want to look at the genes, you need to revert this matrix using t(mat_clust), or invert the order of the vectors in dimnames
+#' In this example, the clustering is made on the samples.
+#' If you want to look at the genes, you need to revert this matrix using t(mat_clust), or invert the order of the vectors in dimnames
 #'
 #' @param ct: values to be added to the matrix
 #' @param nrow: specifies the number of rows (should be equal to the length of the vector "samples". To get this number, length(samples))
