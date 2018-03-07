@@ -45,7 +45,7 @@ taq_data$delta1 <- apply(taq_data, 1, function(row) delta1_livak(taq_data, row[1
 
 #' definition of the function to calculate the difference between delta Ct between experimental and reference sample
 #' @param df: stands for data frame
-#' @param g1: column containing gene names, usually [2] when open_data.R has been followed
+#' @param g1: column containing gene names, usually [4] when open_data.R has been followed
 #' @param d1: column containing delta Ct previously calculated, normally [5]
 #' @param WT: defines a subset of data for the reference sample used (put your reference sample name in the quotes. Caution: R is case sensitive)
 #' @param deltaWT: isolates delta Ct values for the reference sample
@@ -58,7 +58,7 @@ taq_data$delta1 <- apply(taq_data, 1, function(row) delta1_livak(taq_data, row[1
 #' @param taq_data: data frame to be processed
 #' @param 1: apply function to each row
 #' @param function (row) delta2_livak: calls the function you want to apply
-#' @param row[2]: refers to the second column containing the gene names
+#' @param row[4]: refers to the second column containing the gene names
 #' @param row[7]: refers to the fifth column containing the delta ct values previously calculated
 #' 
 #' @example 
@@ -72,7 +72,7 @@ delta2_livak <- function(df, g1, d1){
 }
 
 
-taq_data$delta2 <- apply(taq_data, 1, function(row) delta2_livak(taq_data, row[2], row[7]))
+taq_data$delta2 <- apply(taq_data, 1, function(row) delta2_livak(taq_data, row[4], row[7]))
 
 
 
@@ -129,7 +129,7 @@ taq_data$delta1_geom <- apply(taq_data, 1, function(row) delta1_livak_geom(taq_d
 #' @param taq_data: data frame to be processed
 #' @param 1: apply function to each row
 #' @param function (row) delta2_livak: calls the function you want to apply
-#' @param row[2]: refers to the second column containing the gene names
+#' @param row[4]: refers to the second column containing the gene names
 #' @param row[7]: refers to the fifth column containing the delta ct values previously calculated
 #' 
 #' @example 
@@ -143,7 +143,7 @@ delta2_livak_geom <- function(df, g1, d1){
 }
 
 
-taq_data$delta2_geom <- apply(taq_data, 1, function(row) delta2_livak_geom(taq_data, row[2], row[7]))
+taq_data$delta2_geom <- apply(taq_data, 1, function(row) delta2_livak_geom(taq_data, row[4], row[7]))
 
 
 #' NOTE: if no Reference status was assigned in Detector setup, you can create a vector containing all your reference genes
