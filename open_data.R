@@ -9,18 +9,14 @@
 #' @param dec = "." : specifies type of decimal
 #' @param header = TRUE : extracts header name of each column
 #' @param fill = TRUE : bypasses error if some columns do not have the same row number
-#' @param colClasses : specifies type of value stored in each column (character, number, factor...).
-#' Use "NULL" for columns that you do not want to use.
 #' @param na.string : change all the 999 to NA
 #'
+#' Keep only columns with data of interest (i.e. columns 2 to 7 and column 10)
 #' @example TaqMan chemistry data set
 #' colnames() : only if you want to rename the first four columns that by default are "Name", "Type", "Name.1" and "Type.1"
 
-taq_data <- read.csv("file.csv", skip = 11, sep = ",", dec = ".", header = TRUE, fill = TRUE, na.strings = "999",
-                     colClasses = c("NULL", "character", "character", "numeric", "character", "character", "numeric", "NULL", "NULL", "character", "NULL", "NULL"))
+taq_data <- read.table("file.csv", skip = 11, sep = ",", dec = ".", header = TRUE, fill = TRUE, na.strings = "999")
 
-#' Alternative way if colClasses argument generated an error
-taq_data <- read.csv("file.csv", skip = 11, sep = ",", dec = ".", header = TRUE, fill = TRUE, na.strings = "999")
 taq_data <- taq_data[,c(2:7,10)]
 
 colnames(taq_data) <- c("sampleID", "type", "concentration", "geneID", "reference", "ct", "status")
@@ -28,12 +24,8 @@ colnames(taq_data) <- c("sampleID", "type", "concentration", "geneID", "referenc
 #'
 #' @example EvaGreen chemistry data set (more columns with melting curve data)
 
-eva_data <- read.csv("file.csv", skip = 11, sep = ",", dec = ".", header = TRUE, fill = TRUE,
-                     colClasses = c("NULL", "character", "character", "numeric", "character", "character", "numeric", "NULL", "NULL", "character", "NULL", "NULL","NULL", "NULL", "NULL"),
-                     na.strings = "999")
+eva_data <- read.table("file.csv", skip = 11, sep = ",", dec = ".", header = TRUE, fill = TRUE, na.strings = "999")
 
-#' Alternative way if colClasses argument generated an error
-eva_data <- read.csv("file.csv", skip = 11, sep = ",", dec = ".", header = TRUE, fill = TRUE, na.strings = "999")
 eva_data <- eva_data[,c(2:7,10)]
 
 colnames(eva_data) <- c("sampleID", "type", "concentration", "geneID", "reference", "ct", "status")
