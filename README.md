@@ -5,7 +5,7 @@
 
 **Creation : 2016/01/06**
 
-**Last update : 2016/06/09**
+**Last update : 2019/11/05**
 
 ---
 
@@ -62,20 +62,25 @@ With *git clone* from the repository
 
 These scripts allow quick processing and analysis of high-throughput qPCR data generated on the Biomark HD from Fluidigm.
 Largest data set are 9,216 rows and 16 columns, difficult to handle on Excel (fastidious data sampling...).  
-Using R to open and process data allows the user to quickly subset data and perform different analysis (average, standard deviation etc.) on the whole data set.
+Using R to open and process data allows the user to quickly subset data and perform various analysis (average, standard deviation etc.) on the whole data set.
 
 We recommand using RStudio interface, because it is very user-friendly and easy to use for non expert R users.
 You can download it [here](https://www.rstudio.com/products/rstudio/download/).
 
 #### Program
 
-* R 3.2.2 +
+* R 3.5 +
 
 #### Third party R packages
 
-data.table, ggplot2, Hmisc, psych, qdap, reshape2, stringr
+data.table (function used = as.data.table)
+ggplot2 (functions used = geom_point, geom_smooth)
+Hmisc (function used = %nin%)
+psych (function used = geometric.mean)
+qdapTools (function used = lookup)
+reshape2 (function used = melt)
+stringr (function used = str_detect)
 
-as.data.table, := | geom_point, geom_smooth | %nin% | geometric.mean | lookup | melt | str_detect
 
 ## Authors and Contact
 
