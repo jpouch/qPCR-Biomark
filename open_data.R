@@ -16,9 +16,12 @@
 #' @example TaqMan chemistry data set
 #' colnames() : only if you want to rename the first four columns that by default are "Name", "Type", "Name.1" and "Type.1"
 
-taq_data <- read.csv("file.csv", skip = 11, sep = ",", dec = ".", header = TRUE, fill = TRUE,
-                     colClasses = c("NULL", "character", "character", "numeric", "character", "character", "numeric", "NULL", "NULL", "character", "NULL", "NULL"),
-                     na.strings = "999")
+taq_data <- read.csv("file.csv", skip = 11, sep = ",", dec = ".", header = TRUE, fill = TRUE, na.strings = "999",
+                     colClasses = c("NULL", "character", "character", "numeric", "character", "character", "numeric", "NULL", "NULL", "character", "NULL", "NULL"))
+
+#' Alternative way if colClasses argument generated an error
+taq_data <- read.csv("file.csv", skip = 11, sep = ",", dec = ".", header = TRUE, fill = TRUE, na.strings = "999")
+taq_data <- taq_data[,c(2:7,10)]
 
 colnames(taq_data) <- c("sampleID", "type", "concentration", "geneID", "reference", "ct", "status")
 
@@ -28,6 +31,10 @@ colnames(taq_data) <- c("sampleID", "type", "concentration", "geneID", "referenc
 eva_data <- read.csv("file.csv", skip = 11, sep = ",", dec = ".", header = TRUE, fill = TRUE,
                      colClasses = c("NULL", "character", "character", "numeric", "character", "character", "numeric", "NULL", "NULL", "character", "NULL", "NULL","NULL", "NULL", "NULL"),
                      na.strings = "999")
+
+#' Alternative way if colClasses argument generated an error
+eva_data <- read.csv("file.csv", skip = 11, sep = ",", dec = ".", header = TRUE, fill = TRUE, na.strings = "999")
+eva_data <- eva_data[,c(2:7,10)]
 
 colnames(eva_data) <- c("sampleID", "type", "concentration", "geneID", "reference", "ct", "status")
 
