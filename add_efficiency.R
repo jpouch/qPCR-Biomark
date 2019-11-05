@@ -24,7 +24,7 @@ library(ggplot2)
 #' @example
 
 value <- taq_data[taq_data$type == "Standard",6]
-genes <- as.vector(unique(taq_data[,4]))
+genes <- unique(taq_data[,4])
 conc <- na.omit(log10(unique(taq_data[taq_data$type == "Standard",3])))
 
 mat <- matrix(value, nrow  = 4, ncol = 96, dimnames = list(conc, genes), byrow = TRUE)
