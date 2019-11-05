@@ -15,7 +15,7 @@
 #' @example TaqMan chemistry data set
 #' colnames() : only if you want to rename the first four columns that by default are "Name", "Type", "Name.1" and "Type.1"
 
-taq_data <- read.table("file.csv", skip = 11, sep = ",", dec = ".", header = TRUE, fill = TRUE, na.strings = "999")
+taq_data <- read.table("file.csv", skip = 11, sep = ",", dec = ".", header = TRUE, fill = TRUE, na.strings = "999", stringsAsFactors = FALSE)
 
 taq_data <- taq_data[,c(2:7,10)]
 
@@ -24,7 +24,7 @@ colnames(taq_data) <- c("sampleID", "type", "concentration", "geneID", "referenc
 #'
 #' @example EvaGreen chemistry data set (more columns with melting curve data)
 
-eva_data <- read.table("file.csv", skip = 11, sep = ",", dec = ".", header = TRUE, fill = TRUE, na.strings = "999")
+eva_data <- read.table("file.csv", skip = 11, sep = ",", dec = ".", header = TRUE, fill = TRUE, na.strings = "999", stringsAsFactors = FALSE)
 
 eva_data <- eva_data[,c(2:7,10)]
 
