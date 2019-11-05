@@ -84,6 +84,11 @@ eff$slope <- NULL
 
 taq_data$efficiency <- lookup(taq_data$geneID, eff, missing = NA)
 
+           
+#' Remove Standard data that cause errors for the normalization step
+#'
+#' 
+taq_data <- taq_data[taq_data$type != "Standard", ]
 
 ### Optional ###
 #'
