@@ -1,5 +1,7 @@
 #! /usr/bin/Rscript
 
+library(reshape2)
+
 ### Add efficiency values to data set ###
 #' Create matrix to be melted
 #'
@@ -19,9 +21,9 @@
 #'
 #' @example
 
-value <- taq_data[taq_data$type == "Standard",5]
-genes <- unique(taq_data[,4])
-conc <- na.omit(log10(unique(taq_data[taq_data$type == "Standard",3])))
+value <- as.numeric(taq_data[taq_data$type == "Standard",6])
+genes <- as.vector(unique(taq_data[,4]))
+conc <- na.omit(log10(as.numeric(unique(taq_data[taq_data$type == "Standard",3]))))
 
 mat <- matrix(value, nrow  = 4, ncol = 96, dimnames = list(conc, genes), byrow = TRUE)
 mat <- as.data.frame(mat)
