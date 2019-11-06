@@ -102,7 +102,9 @@ taq_data$delta2 <- apply(taq_data, 1, function(row) delta2_livak(taq_data, row[4
 #' @param function(row) norma_livak: calls the function you want to apply
 #' @param row[1]: refers to the first column containing the sample names
 #' @param row[6]: refers to the fourth column containing the ct values
-
+library(psych)
+                         
+                         
 delta1_livak_geom <- function(df, s1, ct1){
   geneRefs <- df[df$reference=="Reference" & df$sampleID==s1,]
   geomRef <- geometric.mean(geneRefs$ct)
