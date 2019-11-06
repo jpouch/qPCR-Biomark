@@ -1,5 +1,7 @@
 #! usr/bin/Rscript
 
+library(data.table)
+
 ### Apply statistical test to the qPCR data set ###
 #'
 #' The data that has been used so far is long-format data:
