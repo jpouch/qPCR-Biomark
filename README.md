@@ -77,7 +77,6 @@ data.table (function used = as.data.table)
 ggplot2 (functions used = geom_point, geom_smooth)
 Hmisc (function used = %nin%)
 psych (function used = geometric.mean)
-qdapTools (function used = lookup)
 reshape2 (function used = melt)
 stringr (function used = str_detect)
 
