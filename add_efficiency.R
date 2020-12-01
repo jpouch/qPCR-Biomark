@@ -1,7 +1,6 @@
 #! /usr/bin/Rscript
 
 library(reshape2)
-library(qdapTools)
 library(ggplot2)
 
 ### Add efficiency values to data set ###
@@ -76,13 +75,13 @@ eff$slope <- NULL
 
 #' Add efficiency values to the data frame of interest
 #'
-#' @param taq_data$geneID: column containing value to be looked up
+#' @param taq_data: dataframe
 #' @param eff: data frame containing values to be extracted and assigned (must be two columns only)
-#' @param missing: attributes NA to any value missing in the eff data (i. e. genes not present in the eff data frame)
+#' @param all.x = TRUE: attributes NA to any value missing in the eff data (i. e. genes not present in the eff data frame)
 #'
 #' @example
 
-taq_data$efficiency <- lookup(taq_data$geneID, eff, missing = NA)
+taq_data$efficiency <- merge(taq_data, eff, all.x = TRUE)
 
            
 #' Remove Standard data that cause errors for the normalization step
