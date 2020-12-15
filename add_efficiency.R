@@ -1,33 +1,34 @@
 #! /usr/bin/Rscript
 
+
+#' Required packages
 library(reshape2)
 library(ggplot2)
 
 ### Add efficiency values to data set ###
 #' Create matrix to be melted
 #'
-#' value: vector containing the Ct values
-#' genes: vector containing gene names
-#' conc: vector containing log(concentration)
+#' value: vector containing Ct values
+#' geneID: vector containing gene names
+#' conc: vector containing log(concentration) values
 #' if there is a NA value in this vector, it has to be removed by selecting only the numeric values using the na.omit() function
 #'
-#' @param value: vector of values used to fill the matrix
+#' @param values: vector of values used to fill the matrix
 #' @param nrow: number of rows. Must be equal to the length of the vector used for rows, in our case length(slope) = 4
 #' @param ncol: number of columns. Must be equal to the length of the vector used for columns, in our case number of genes
 #' @param dimnames: assign row and column names. First element of list() is for rows and second is for columns
-#' @ param byrow = TRUE: fills the matrix by row (default is by column)
+#' @param byrow = TRUE: fills the matrix by row (default is by column)
 #'
 #' set matrix as data frame
 #' add a column containing concentration values
 #'
 #' @example
 
-value <- taq_data[taq_data$type == "Standard",6]
-genes <- unique(taq_data[,4])
-conc <- na.omit(log10(unique(taq_data[taq_data$type == "Standard",3])))
+values <- taq_data[taq_data$type == "Standard", 6]
+geneID <- unique(taq_data[,4])
+conc <- na.omit(log10(unique(taq_data[taq_data$type == "Standard", 3])))
 
-mat <- matrix(value, nrow  = 4, ncol = 96, dimnames = list(conc, genes), byrow = TRUE)
-mat <- as.data.frame(mat)
+mat <- as.data.frame(matrix(values, nrow  = 4, ncol = 96, dimnames = list(conc, geneID), byrow = TRUE))
 mat$slope <- conc
 
 #' Melt the data frame (stacks a set of columns into a single column of data)
@@ -40,12 +41,12 @@ mat$slope <- conc
 #'
 #' @example
 
-std <- na.omit(melt(mat, id=names(mat)[97], measure=names(mat)[1:96], variable = "genes"))
+std <- na.omit(reshape2::melt(mat, id=names(mat)[97], measure=names(mat)[1:96], variable = "geneID"))
 
 #' Extract slope value from linear regression
 #'
 #' @param std: data frame to be processed
-#' @param std$genes: specifies factors to be used, in our case the genes
+#' @param std$geneID: specifies factors to be used, in our case the genes
 #' @param coef: function to apply linear regression (lm) to the data
 #'
 #' @example
@@ -61,15 +62,16 @@ std <- na.omit(melt(mat, id=names(mat)[97], measure=names(mat)[1:96], variable =
 #'
 #' @example
 
-fits <- by(std, std$genes, function(i) coef(lm(value ~ slope, i)))
+fits <- by(std, std$geneID, function(i) coef(lm(value ~ slope, i)))
 
 nullToNA <- function(x) {
   x[sapply(x, is.null)] <- NA
   return(x)
 }
+
 fits <- nullToNA(fits)
 
-eff <- data.frame(genes = names(fits), do.call(rbind, fits))[c(1,3)]
+eff <- data.frame(geneID = names(fits), do.call(rbind, fits))[c(1, 3)]
 eff$efficiency <- 10^(-1/eff$slope)
 eff$slope <- NULL
 
@@ -81,7 +83,7 @@ eff$slope <- NULL
 #'
 #' @example
 
-taq_data$efficiency <- merge(taq_data, eff, all.x = TRUE)
+taq_data <- merge(taq_data, eff, all.x = TRUE)
 
            
 #' Remove Standard data that cause errors for the normalization step
@@ -91,10 +93,15 @@ taq_data <- taq_data[taq_data$type != "Standard", ]
 
 ### Optional ###
 #'
-#' Visualize standard curves with ggplot2
+#' Visualize standard curves with ggplot2 for reference genes
 #'
 
-ggplot(std, aes(x = slope, y = value, color = genes)) +
+ggplot(std, aes(x = slope, y = value, color = geneID)) +
   geom_point(size = 3) +
   labs(x = "log[C]", y = "Ct") + 
   geom_smooth(method = "lm", se = FALSE)
+
+           
+           
+           
+## J. Pouch ## 2020 ##
