@@ -5,7 +5,7 @@
 
 **Creation : 2016/01/06**
 
-**Last update : 2019/11/05**
+**Last update : 2020/12/15**
 
 ---
 
@@ -69,11 +69,10 @@ You can download it [here](https://www.rstudio.com/products/rstudio/download/).
 
 #### Program
 
-* R 3.5 +
+* R 4.0 +
 
 #### Third party R packages
 
-data.table (function used = as.data.table)
 ggplot2 (functions used = geom_point, geom_smooth)
 Hmisc (function used = %nin%)
 psych (function used = geometric.mean)
@@ -83,7 +82,7 @@ stringr (function used = str_detect)
 
 ## Authors and Contact
 
-Juliette Pouch - 2016
+Juliette Pouch - 2016 - Update 2020
 * <juliette.hamroune@inserm.fr> | <juliette.pouch@gmail.com>
 * [Github](https://github.com/jpouch)
 * High-throughput qPCR core facility - IBENS contact: <qpcr@biologie.ens.fr> ; [web page](http://www.ibens.ens.fr/spip.php?rubrique46)
