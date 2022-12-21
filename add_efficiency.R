@@ -41,7 +41,7 @@ mat$slope <- conc
 #'
 #' @example
 
-std <- na.omit(reshape2::melt(mat, id=names(mat)[97], measure=names(mat)[1:96], variable = "geneID"))
+std <- na.omit(reshape2::melt(mat, id = names(mat)[97], measure = names(mat)[1:96], variable = "geneID"))
 
 #' Extract slope value from linear regression
 #'
