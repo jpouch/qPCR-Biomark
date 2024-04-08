@@ -2,7 +2,7 @@
 
 #' Required package
 library(reshape2)
-
+library(data.table)
 
 ### Apply statistical test to the qPCR data set ###
 #'
@@ -27,7 +27,7 @@ taq_stat <- reshape2::dcast(taq_data, sampleID ~ geneID, value.var="delta2")
 #'
 #' @example: set taq_data as data table
 
-taq_stat <- as.data.table(taq_stat)
+taq_stat <- data.table::as.data.table(taq_stat)
 
 #'
 #' Apply function to calculate the number of NA values per column
